@@ -3,41 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <title>Canvas</title>
+    <script type="text/javascript" charset="UTF-8">
+        //利用firebug等前端调试工具来帮助你理解javascript语言的许多细节
+        //canvas是HTML5新增的组件
+        //canvas
+        window.onload=function(){
+            //绘制形状
+            var canvas = document.getElementById("test-canvas");
+            var ctx = canvas.getContext('2d');//2d图形
+            ctx.clearRect(0, 0, 200, 200); // 擦除(0,0)位置大小为200x200的矩形，擦除的意思是把该区域变为透明
+            ctx.fillStyle = '#dddddd'; // 设置颜色
+            ctx.fillRect(10, 10, 130, 130); // 把(10,10)位置大小为130x130的矩形涂色
+            // 利用Path绘制复杂路径:
+            var path=new Path2D();
+            path.arc(75, 75, 50, 0, Math.PI*2, true);
+            path.moveTo(110,75);
+            path.arc(75, 75, 35, 0, Math.PI, false);
+            path.moveTo(65, 65);
+            path.arc(60, 65, 5, 0, Math.PI*2, true);
+            path.moveTo(95, 65);
+            path.arc(90, 65, 5, 0, Math.PI*2, true);
+            ctx.strokeStyle = '#0000ff';
+            ctx.stroke(path);
+            //绘制文本
+            var canvas = document.getElementById("test-canvas");
+            var ctx = canvas.getContext('2d');//2d图形
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.shadowOffsetX = 2;
+            ctx.shadowOffsetY = 2;
+            ctx.shadowBlur = 2;
+            ctx.shadowColor = '#666666';
+            ctx.font = '24px Arial';
+            ctx.fillStyle = '#333333';
+            ctx.fillText('带阴影的文字', 20, 40);
+        };
+    </script>
 </head>
 <body>
 <!-- HTML代码 -->
 <canvas id="test-canvas" width="200" heigth="100">
     <p>你的浏览器不支持Canvas</p>
 </canvas>
+/*
+Canvas除了能绘制基本的形状和文本，还可以实现动画、缩放、各种滤镜和像素转换等高级操作。如果要实现非常复杂的操作，考虑以下优化方案：
 
-<form id="form">
-     <input type="text" name="username" id="username">
-     <select id="gender">
-          <option value="woman">女</option>
-          <option value="man">男</option>
-     </select>
-</form>
+通过创建一个不可见的Canvas来绘图，然后将最终绘制结果复制到页面的可见Canvas中；
 
-<script type="text/javascript" charset="UTF-8">
+尽量使用整数坐标而不是浮点数；
 
-    var element = document.getElementById('username');
-    alert(element);
-    var element = document.getElementById('gender');
-    alert(element);
-    //利用firebug等前端调试工具来帮助你理解javascript语言的许多细节
-    //canvas是HTML5新增的组件
-/*    var canvas = document.getElementById("test-canvas");
-    var ctx = canvas.getContext('2d');
-    alert(ctx);
-    console.log(ctx.constructor);*/
-/*    if(canvas.getContext){
-        alert('你的浏览器支持Canvas！');
-    }else{
-        alert("弄得浏览器不支持Canvas!");
-    }
-    alert(canvas.__proto__);
-    alert(canvas.constructor);
-    alert(typeof canvas);*/
-</script>
+可以创建多个重叠的Canvas绘制不同的层，而不是在一个Canvas中绘制非常复杂的图；
+
+背景图片如果不变可以直接用<img>标签并放到最底层。
+
+*/
 </body>
 </html>
