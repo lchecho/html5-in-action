@@ -7,6 +7,7 @@ http://www.runoob.com/html/html5-intro.html                    菜鸟教程<br>
 http://html5demos.com/   html5 demo<br>
 ##video
 HTML5游戏公开课-坦克大战<br>
+http://study.163.com/course/introduction/1003005.htm#/courseDetail   李炎恢HTML5第一季视频教程(内涵CSS知识)<br>
 https://www.youtube.com/html5  youtube html5<br>
 ##book
 
