@@ -36,4 +36,6 @@ AmazeUI<br>
 #game engines
 https://html5gameengine.com/ <br>
 https://developer.mozilla.org/en-US/docs/Games/Tools/Engines_and_tools<br>
+#国内
+http://edn.egret.com/cn/list/video/  白鹭开发者中心<br>
 
