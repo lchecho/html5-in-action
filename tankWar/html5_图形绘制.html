@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图形绘制</title>
+</head>
+<body>
+<!--<canvas id="can1" width="500px" height="400px" style="border:1px solid red"></canvas>-->
+<canvas id="can1"></canvas>
+<div style="display:none;">
+    <img id="source" src="rhino.jpg"
+         width="300" height="227">
+</div>
+
+<script type="text/javascript" charset="UTF-8">
+      //1 得到画布
+      var canvas1 = document.getElementById("can1");
+      //2 得到上下文引用,你可以理解为画笔
+      var ctx = canvas1.getContext("2d");
+
+      //3画直线
+      ctx.moveTo(20,20);
+      ctx.lineTo(20,90);
+      ctx.strokeStyle = "red";//改变颜色,红色
+      ctx.stroke();
+
+
+      //画出一个填充的三角形 --->路径
+      //开始新路径
+      ctx.beginPath();
+      ctx.moveTo(40,20);
+      ctx.lineTo(40,90);
+      ctx.lineTo(80,90);
+      //闭合路径,把最后这个点和第一点moveTo()闭合
+      ctx.closePath();
+      ctx.fillStyle = "blue";//改变颜色,红色
+      //填充矩形
+      ctx.fill();
+      //空心矩形
+      //ctx.stroke();
+      ctx.strokeRect(100,20,70,70);
+      ctx.fillStyle = "red";//改变颜色,红色
+      ctx.fillRect(190,20,50,50);
+      //画出圆形
+      ctx.beginPath();
+      ctx.arc(270,40,20,0,360);
+      ctx.closePath();
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.arc(370,40,20,0,360);
+      ctx.closePath();
+      ctx.fillStyle = "green";//改变颜色,红色
+      ctx.fill();
+      //画图像
+      /*var image = document.getElementById("source");
+      ctx.drawImage(image,3, 71, 104, 124, 21, 20, 87, 104);*/
+      //1创建image对象
+      var img1 = new Image();
+      //var img1 = document.createElement("img");
+      //2指定是哪个图片
+      img1.src = "rhino.jpg";
+      img1.onload = function(){
+          ctx.drawImage(img1,20,100,200,150);
+      };
+      img1.onfocus=function(){
+          alert("onfocus");
+      };
+</script>
+</body>
+</html>
