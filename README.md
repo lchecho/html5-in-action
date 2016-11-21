@@ -38,4 +38,6 @@ https://html5gameengine.com/ <br>
 https://developer.mozilla.org/en-US/docs/Games/Tools/Engines_and_tools<br>
 #国内
 http://edn.egret.com/cn/list/video/  白鹭开发者中心<br>
+#API手册
+http://html5index.org/index.html 
 
