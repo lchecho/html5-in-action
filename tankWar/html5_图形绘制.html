@@ -6,7 +6,7 @@
 </head>
 <body>
 <!--<canvas id="can1" width="500px" height="400px" style="border:1px solid red"></canvas>-->
-<canvas id="can1"></canvas>
+<canvas id="can1" width="500px" height="400px" style="border:1px solid red"></canvas>
 <div style="display:none;">
     <img id="source" src="rhino.jpg"
          width="300" height="227">
@@ -66,6 +66,11 @@
       img1.onfocus=function(){
           alert("onfocus");
       };
+      //在画布上写字
+      var text = "传智播客";
+      ctx.font="30px 宋体"
+      ctx.fillStyle="yellow";
+      ctx.fillText(text,230,200);
 </script>
 </body>
 </html>
